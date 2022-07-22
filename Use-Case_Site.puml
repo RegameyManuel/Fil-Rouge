@@ -1,0 +1,44 @@
+@startuml VG catalogue
+!theme toy
+skinparam actorStyle hollow
+skinparam ranksep 20
+left to right direction
+
+actor Visiteur as v
+actor Employe as e
+actor Client as c
+actor Client_Particulier as part
+actor Client_Pro as pro
+
+package Site {
+
+  usecase "S'inscrire" as UC1
+  usecase "S'Authentifier" as UC2
+  usecase "Se Déconnecter" as UC3
+  usecase "Modifier son profil" as UC4
+  usecase "Gérer le catalogue" as UC5
+  usecase "Passer commande" as UC6
+
+}
+
+v -- UC1
+v -- UC2
+v --|> e
+v --|> part
+v --|> pro
+
+c -- UC3
+c -- UC4
+c -- UC6
+
+e -- UC3
+e -- UC5
+
+part --|> c
+part .> UC1 : <include>
+
+pro --|> c
+
+@enduml
+
+

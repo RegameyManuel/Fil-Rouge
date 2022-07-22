@@ -1,0 +1,51 @@
+Fonctions
+
+Ventes aux entreprises
+Ventes aux particuliers
+Gestion des commandes
+Gestion de la facturation
+Gestion du catalogue
+Permettre la visualisation du catalogue en ligne
+Permettre de passer commande en ligne
+Mettre à jour le stock
+Calculer le prix de vente à partir du prix d'achat et du coefficients
+Attribuer et ajuster les coefficients des clients sur le prix de vente
+Attribution d'un commercial à chaque clients
+Permettre de négocier une réduction avec les clients pro
+Editer un BL
+Editer une facture
+Gerer les informations clients et les adresses livraison et facturation
+Noter les information de règlement
+Attribuer une référence à chaque client
+Gerer les commande expédiées partiellement
+Conserver les données pendant trois ans
+
+Consultation du catalogue
+Ajout/Suppression de produit dans le panier
+Inscription d'un nouvel utilisateur sur le site (pour les particuliers)
+Connexion/Deconnexion d'un utilisateur pour accéder à son profil
+Validation du panier pour créer une nouvelle commande
+Visualisation des anciennes commandes
+Site web réactif
+
+
+Module de gestion des produits:
+-Ajouter des produits
+-Modifier des produits
+-Supprimer des produits
+-Modifier l'arborescence des catégories
+
+Tableau de bord de gestion:
+-Chiffre d'affaires mois par mois pour une année sélectionnée
+-Chiffre d'affaires généré pour un fournisseur
+-TOP 10 des produits les plus commandés pour une année sélectionnée (référence et nom du produit, quantité commandée, fournisseur)
+-TOP 10 des produits les plus rémunérateurs pour une année sélectionnée (référence et nom du produit, marge, fournisseur)
+-Top 10 des clients en nombre de commandes ou chiffre d'affaires
+-Répartition du chiffre d'affaires par type de client
+-Nombre de commandes en cours de livraison.
+
+
+Application mobile:
+-Consulter le catalogue (parcourir les rubriques et les produits)
+-Se connecter pour consulter l'historique des commandes
+-Consulter son profil

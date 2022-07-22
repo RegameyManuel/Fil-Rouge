@@ -1,0 +1,45 @@
+@startuml VG Panier-Commandes
+!theme toy
+skinparam actorStyle hollow
+left to right direction
+
+actor Client_Particulier as part
+actor Client_Pro as pro
+actor Client as c
+
+package Site {
+
+    package Panier {
+        usecase "Ajout d'un produit au panier" as UC1
+        usecase "Suppression d'un produit du panier" as UC2
+        usecase "Validation d'un panier" as UC3
+    }
+
+    package Commandes {
+
+        usecase "Consulter l'historique commandes" as UC4
+
+        package Commande {
+
+            usecase "Payer sa commande" as UC5
+            usecase "Payer en différé" as UC6
+        }
+    }
+}
+
+Commande ..> UC3 : <include>
+
+c --- UC1
+c --- UC2
+c --- UC3
+c --- UC4
+
+part --|> c
+pro --|> c
+
+part --- UC5
+pro --- UC6
+
+@enduml
+
+

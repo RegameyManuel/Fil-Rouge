@@ -1,0 +1,92 @@
+@startuml VG catalogue
+!theme toy
+skinparam actorStyle hollow
+skinparam ranksep 20
+left to right direction
+
+actor Visiteur as v
+actor Employe as e
+actor Client as c
+actor Client_Particulier as part
+actor Client_Pro as pro
+
+package Site {
+
+  package Catalogue {
+    usecase "Consulter le Catalogue" as UC1
+    usecase "Ajouter un produit au catalogue" as UC2
+    usecase "Modifier un produit du catalogue" as UC3
+    usecase "Supprimer un produit du catalogue" as UC4
+    usecase "Modifier l'arborescence des catégories" as UC5
+  }
+
+  usecase "S'inscrire" as UC6
+  usecase "S'Authentifier" as UC7
+  usecase "Se Déconnecter" as UC8
+  usecase "Modifier son profil" as UC15
+  usecase "Gérer le catalogue" as UC16
+  usecase "Passer commande" as UC17
+
+  package Panier {
+    usecase "Ajout d'un produit au panier" as UC9
+    usecase "Suppression d'un produit du panier" as UC10
+    usecase "Validation d'un panier" as UC11
+  }
+
+  package Commandes {
+
+    usecase "Consulter l'historique commandes" as UC13
+
+    package Commande {
+
+      usecase "Payer sa commande" as UC12
+      usecase "Payer en différé" as UC14
+    }
+  }
+
+}
+
+Commande *-- "1" Panier
+
+v -- UC1
+v -- UC6
+v -- UC7
+
+
+UC17 -- UC9
+UC17 -- UC10
+UC17 -- UC11
+c -- UC1
+c -- UC8
+c -- UC13
+c -- UC15
+'-----------------
+c -- UC17
+
+
+UC16 -- UC1
+UC16 -- UC2
+UC16 -- UC3
+UC16 -- UC4
+e -- UC5
+e -- UC8
+'-----------------
+e -- UC16
+
+part -- UC12
+pro -- UC14
+
+UC11 .> UC12 : <include>
+UC11 .> UC14 : <include>
+UC6 .> pro : <exclude>
+UC6 .> e : <exclude>
+
+v --|> e
+v --|> part
+v --|> pro
+part --|> c
+pro --|> c
+
+@enduml
+
+

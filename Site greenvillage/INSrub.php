@@ -1,5 +1,13 @@
+<?php
+include "db/db.php";
+use PhpParser\Node\Expr\Cast\Object_;
+?>
 
-
+<?php
+//function insertRubrique($nom, $id)
+//{
+    //if (isset($_POST["nom"]) && isset($_POST["rubrique"])) 
+    //    $rubriq_id = findRubrique_id($_POST["rubrique"]); 
 
 function insertRubrique($nom, $id)
 {
@@ -30,3 +38,5 @@ function insertRubrique($nom, $id)
 
     return $tableau;
 }
+
+?>

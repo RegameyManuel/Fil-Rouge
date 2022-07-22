@@ -1,0 +1,37 @@
+@startuml VG Catalogue
+!theme toy
+skinparam actorStyle hollow
+skinparam ranksep 20
+left to right direction
+
+actor Visiteur as v
+actor Employe as e
+actor Client_Particulier as part
+actor Client_Pro as pro
+
+package Site {
+
+    package Catalogue {
+        usecase "Consulter le Catalogue" as UC1
+        usecase "Ajouter un produit au catalogue" as UC2
+        usecase "Modifier un produit du catalogue" as UC3
+        usecase "Supprimer un produit du catalogue" as UC4
+        usecase "Modifier l'arborescence des catégories" as UC5
+    }
+}
+
+v --- UC1
+v ---|> part
+v ---|> pro
+part --- UC1
+pro --- UC1
+
+e -- UC1
+e -- UC2
+e -- UC3
+e -- UC4
+e -- UC5
+
+@enduml
+
+
